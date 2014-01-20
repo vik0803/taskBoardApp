@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Wash cats",
+    "type": "task",
+    "status": "toDo"
+  },
+  {
+    "id": 2,
+    "name": "Wash dogs",
+    "type": "task",
+    "status": "inProgress"
+  },
+  {
+    "id": 3,
+    "name": "Wash hands",
+    "type": "bug",
+    "status": "done"
+  },  
+  {
+    "id": 4,
+    "name": "Taurcraft App",
+    "type": "task",
+    "status": "toDo"
+  },
+  {
+    "id": 5,
+    "name": "Include underscore",
+    "type": "task",
+    "status": "toDo"
+  }
+]
