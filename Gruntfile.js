@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                     '<%= taskApp.app %>/*.html',
                     '<%= taskApp.app %>/*.json',
                     '.tmp/styles/{,*/}*.css',
-                    '{.tmp,<%= taskApp.app %>}/scripts/{,*/}*.js',
+                    '{.tmp,<%= taskApp.app %>}/js/{,*/}*.js',
                     '<%= taskApp.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
@@ -85,8 +85,8 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= taskApp.app %>/scripts/{,*/}*.js',
-                '!<%= taskApp.app %>/scripts/vendor/*',
+                '<%= taskApp.app %>/js/{,*/}*.js',
+                '!<%= taskApp.app %>/js/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
         },
@@ -165,7 +165,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= taskApp.dist %>/scripts/{,*/}*.js',
+                        '<%= taskApp.dist %>/js/{,*/}*.js',
                         '<%= taskApp.dist %>/styles/{,*/}*.css',
                         '<%= taskApp.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '<%= taskApp.dist %>/styles/fonts/{,*/}*.*'
@@ -272,9 +272,9 @@ module.exports = function (grunt) {
             devFile: '<%= taskApp.app %>/bower_components/modernizr/modernizr.js',
             outputFile: '<%= taskApp.dist %>/bower_components/modernizr/modernizr.js',
             files: [
-                '<%= taskApp.dist %>/scripts/{,*/}*.js',
+                '<%= taskApp.dist %>/js/{,*/}*.js',
                 '<%= taskApp.dist %>/styles/{,*/}*.css',
-                '!<%= taskApp.dist %>/scripts/vendor/*'
+                '!<%= taskApp.dist %>/js/vendor/*'
             ],
             uglify: true
         },
@@ -299,7 +299,7 @@ module.exports = function (grunt) {
                 exclude: ['modernizr']
             },
             target: {
-                rjsConfig: '<%= taskApp.app %>/scripts/main.js'
+                rjsConfig: '<%= taskApp.app %>/js/main.js'
             }
         }
     });
@@ -314,8 +314,7 @@ module.exports = function (grunt) {
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
-            'watch',
-            'jshint'
+            'watch'
         ]);
     });
 

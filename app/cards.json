@@ -16,10 +16,10 @@
     "name": "Wash hands",
     "type": "bug",
     "status": "done"
-  },  
+  },
   {
     "id": 4,
-    "name": "Taurcraft App",
+    "name": "Move html to jade",
     "type": "task",
     "status": "toDo"
   },

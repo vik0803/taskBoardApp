@@ -2,8 +2,7 @@ require.config({
     paths: {
         jquery: '../bower_components/jquery/jquery',
         requirejs: '../bower_components/requirejs/require',
-        'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap',
-        underscore: '../bower_components/underscore/underscore-min'
+        underscore: '../bower_components/underscore/underscore'
     },
     shim: {
         'underscore': {
@@ -12,9 +11,10 @@ require.config({
     }
 });
 
-require(['app', 'jquery'], function (app, $) {
+require(['app', 'jquery'], function (App, $) {
     'use strict';
 
-    console.log(app);
+    var application = new App();
+
     console.log('Running jQuery %s', $().jquery);
 });
