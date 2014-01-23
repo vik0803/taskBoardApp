@@ -1,31 +1,32 @@
 'use strict';
-define(['jquery', 'underscore', 'views/cardView'], function($, _, CardView){
+define(['jquery', 'underscore', 'views/cardView'],
+    function($, _, CardView){
 
-    var CardsView = function(parameters, el) {
+    var CardsView = function(parameters, el, controller) {
         this.el = document.getElementById(el);
         this.collection = parameters;
+        // o_O
+        this.controller = controller;
         this.init();
     }
 
     CardsView.prototype.init = function(){
-        // this.el.addEventListener('dragstart', handleDragStart, false);
-        // this.el.addEventListener('dragenter', handleDragEnter, false);
-        // this.el.addEventListener('dragover', handleDragOver, false);
-        // this.el.addEventListener('dragleave', handleDragLeave, false);
-        // this.el.addEventListener('dragend', handleDragEnd, false);
-        // this.el.addEventListener('drop', handleDragEnd, false);
+        var self = this;
+        _.each(this.collection, function(model){
+            model.collection = self.collection;
+        });
 
 
+        // Sorry, no time at all to create normal events bindings
+        // TODO Bind Events
         $(this.el).on('rendered', function(){
 
-            // function handleDragStart(e) {
-            //   this.style.opacity = '0.4';  // this / e.target is the source node.
-            // }
-
-            // var cols = document.querySelectorAll('[draggable="true"]');
-            // [].forEach.call(cols, function(col) {
-            //     col.
-            // });
+            _.each(self.childViews, function(view){
+                view.listen();
+                $(view).on('insertAfter', function(e, data){
+                    $(self.controller).trigger('changeOrder', data);
+                });
+            });
 
         });
 
@@ -46,14 +47,17 @@ define(['jquery', 'underscore', 'views/cardView'], function($, _, CardView){
     };
 
     CardsView.prototype.showCollection = function(){
-        var ItemView;
+        var ItemView, self = this;
+
+        this.childViews = [];
         // TODO templates usage
         var html = '<ul>';
-
         this.el.innerHTML = html;
+
         _.each(this.collection, function(item, index){
             var view = new CardView(item, index);
-            html += view.render();
+            self.childViews.push(view);
+            html += view.render().outerHTML;
         });
 
         html += '</ul>';

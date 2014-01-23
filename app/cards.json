@@ -27,6 +27,30 @@
     "id": 5,
     "name": "Include underscore",
     "type": "task",
+    "status": "done"
+  },
+  {
+    "id": 6,
+    "name": "Get rid of jQuery",
+    "type": "bug",
+    "status": "inProgress"
+  },
+  {
+    "id": 7,
+    "name": "Emplement Templates",
+    "type": "task",
+    "status": "toDo"
+  },
+  {
+    "id": 8,
+    "name": "Drop at the end of the list support",
+    "type": "task",
+    "status": "toDo"
+  },
+  {
+    "id": 9,
+    "name": "Remove deprecated els, events and stuff",
+    "type": "bug",
     "status": "toDo"
   }
 ]

@@ -1,8 +1,8 @@
 define(['underscore'], function(_){
 
-    function Card(options){
+    function CardModel(options){
         _.extend(this, options);
     };
 
-    return Card;
+    return CardModel;
 });
