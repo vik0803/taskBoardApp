@@ -8,8 +8,7 @@ define(['jquery', 'underscore', 'models/cardModel', 'controllers/cardsController
             options = options || {};
             if (Modernizr.localstorage) {
                 this.cards = localStorage.cards ? JSON.parse(localStorage.cards) : [];
-            }
-            else {
+            } else {
                 this.cards = [];
             }
 
@@ -21,7 +20,7 @@ define(['jquery', 'underscore', 'models/cardModel', 'controllers/cardsController
 
             if (this.cards.length === 0) {
                 var cards = $.getJSON(cardsPath, function() {}).done(function(data) {
-                    // console.log('cards have been loaded:', data);
+                    console.log('cards have been loaded from json:', data);
                 }).fail(function() {
                     console.log('error while loading cards');
                 });
@@ -35,19 +34,20 @@ define(['jquery', 'underscore', 'models/cardModel', 'controllers/cardsController
                     CardsController.start();
                 });
             } else {
+                console.log('cards have been loaded from localStorage');
                 CardsController.start();
             }
         };
 
-        // don't even know where to put this(
-        Array.prototype.move = function(old_index, new_index) {
-            if (new_index >= this.length) {
-                var k = new_index - this.length;
+        // don't even know where to put this( Let it be here for a while
+        Array.prototype.move = function(oldIndex, newIndex) {
+            if (newIndex >= this.length) {
+                var k = newIndex - this.length;
                 while ((k--) + 1) {
                     this.push(undefined);
                 }
             }
-            this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+            this.splice(newIndex, 0, this.splice(oldIndex, 1)[0]);
             return this; // for testing purposes
         };
 

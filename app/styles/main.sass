@@ -3,6 +3,9 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/"
 @import sass-bootstrap/lib/bootstrap
 @import compass/css3/opacity
 
+// $bugColor:
+// $taskColor:
+
 .browsehappy
   margin: 0.2em 0
   background: #ccc
@@ -15,7 +18,15 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/"
 
 .over-bottom
   border-bottom: 3px dotted black
+  padding-bottom: 1em
   +opacity(.5)
 
-.placeholder
-  background: yellow
+#cards
+  ul.list-group
+    margin: 0
+    li:hover
+      background-color: $list-group-hover-bg
+      cursor: pointer
+    .alert-info
+      margin: 0
+      font-size: .9em

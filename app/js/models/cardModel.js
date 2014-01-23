@@ -1,6 +1,6 @@
-define(['underscore'], function(_){
+define(['underscore'], function(_) {
 
-    function CardModel(options){
+    var CardModel = function(options) {
         _.extend(this, options);
     };
 

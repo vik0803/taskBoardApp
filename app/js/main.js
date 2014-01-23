@@ -21,5 +21,5 @@ require(['app', 'jquery'], function (App, $) {
 
     var application = new App();
 
-    console.log('Running jQuery %s', $().jquery);
+    console.log('unfortunately running jQuery with version %s', $().jquery);
 });
