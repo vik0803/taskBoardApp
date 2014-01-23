@@ -26,11 +26,6 @@ define(['views/cardsView'], function(CardsView){
 
         $(this).on('changeOrder', function(e, data){
             // TODO auto logic + move to base
-            var targetCol = {
-                toDo: self.toDo,
-                inProgress: self.inProgress,
-                done: self.done
-            }[data.targetStatus];
             var sourceCol = {
                 toDo: self.toDo,
                 inProgress: self.inProgress,
@@ -41,6 +36,11 @@ define(['views/cardsView'], function(CardsView){
                 inProgress: self.inProgressListView,
                 done: self.doneListView
             }[data.sourceStatus];
+            var targetCol = {
+                toDo: self.toDo,
+                inProgress: self.inProgress,
+                done: self.done
+            }[data.targetStatus];
             var tList = {
                 toDo: self.toDoListView,
                 inProgress: self.inProgressListView,
@@ -67,10 +67,11 @@ define(['views/cardsView'], function(CardsView){
             _.each(arr, function(obj) {
                 var clone = _.clone(obj);
                 delete clone.collection;
-                toStore.push();
+                toStore.push(clone);
             });
-            localStorage.clear();
+            // localStorage.clear();
             localStorage.cards = JSON.stringify(toStore);
+            console.log(localStorage.cards);
         });
     }
 

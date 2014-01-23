@@ -9,6 +9,9 @@ require.config({
     shim: {
         'underscore': {
             exports: '_'
+        },
+        'modernizr': {
+            exports: 'Modernizr'
         }
     }
 });
