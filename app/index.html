@@ -22,8 +22,9 @@
         <![endif]-->
 
         <div class="container">
-            <header class="header">
-                <h1 class="text-muted">taskApp</h1>
+            <header class="header clearfix row">
+                <h2 class="col-md-8 text-muted">taskApp</h2>
+                <div id="add-card" class="col-md-4"></div>
             </header>
 
             <section id="cards" class="row">
@@ -31,9 +32,18 @@
                 <div class="col-md-4">
                     <div class="panel panel-default">
                       <div class="panel-heading">
-                        <h3 class="panel-title text-center">To Do</h3>
+                        <h3 class="panel-title">To Do</h3>
                       </div>
-                      <div id="to-do" class="panel-body">
+                      <div id="toDo" class="panel-body"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">In Progress</h3>
+                      </div>
+                      <div id="inProgress" class="panel-body">
 
                       </div>
                     </div>
@@ -42,18 +52,7 @@
                 <div class="col-md-4">
                     <div class="panel panel-default">
                       <div class="panel-heading">
-                        <h3 class="panel-title text-center">In Progress</h3>
-                      </div>
-                      <div id="in-progress" class="panel-body">
-
-                      </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h3 class="panel-title text-center">Done</h3>
+                        <h3 class="panel-title">Done</h3>
                       </div>
                       <div id="done" class="panel-body">
 
@@ -63,7 +62,7 @@
             </section>
 
             <footer class="footer">
-                <p>Demo app for Taucraft from Vadzim</p>
+                <p>Demo app using RequireJS, jQuery and Underscore, HTML5 DnD and localStorage + self-written kinda mvc</p>
             </footer>
         </div>
 

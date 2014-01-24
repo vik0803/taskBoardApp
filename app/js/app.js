@@ -1,7 +1,8 @@
 'use strict';
 
-define(['jquery', 'underscore', 'models/cardModel', 'controllers/cardsController', 'modernizr'],
-    function($, _, CardModel, CardsController, Modernizr) {
+define(['jquery', 'underscore', 'models/cardModel', 'controllers/cardsController', 'controllers/addController',
+    'modernizr'],
+    function($, _, CardModel, CardsController, AddController, Modernizr) {
 
         var cardsPath = '/cards.json';
         var App = function(options) {
@@ -30,12 +31,13 @@ define(['jquery', 'underscore', 'models/cardModel', 'controllers/cardsController
                         self.cards.push(new CardModel(data[i]));
                     }
                     localStorage.cards = JSON.stringify(self.cards);
-
                     CardsController.start();
+                    AddController.start();
                 });
             } else {
                 console.log('cards have been loaded from localStorage');
                 CardsController.start();
+                AddController.start();
             }
         };
 

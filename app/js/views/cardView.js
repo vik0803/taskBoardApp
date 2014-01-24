@@ -66,7 +66,6 @@ define(['underscore', 'jquery', 'utils'], function(_, $, utils) {
 
     CardView.prototype.onDragStart = function(e) {
 
-        e.dataTransfer.effectAllowed = 'move';
         var data = {
             sourceId: this.model.id,
             sourceIndex: this.model.collection.indexOf(this.model),
@@ -114,7 +113,7 @@ define(['underscore', 'jquery', 'utils'], function(_, $, utils) {
         data.targetStatus = this.model.status;
         data.targetType = this.model.type;
 
-        //TODO insertAfter
+        //TODO insertBefore
         if ((data.sourceIndex === data.targetIndex) && (data.sourceStatus === data.targetStatus)) {
             console.log('nothing has changed');
         } else {
@@ -128,11 +127,11 @@ define(['underscore', 'jquery', 'utils'], function(_, $, utils) {
         // this.hidxeUiClasses(e);
     };
 
-    CardView.prototype.showMarkers = function(e) {
+    CardView.prototype.showMarkers = function() {
         var self = this;
         // Sorry, no time to do it proper
         var el = document.getElementById(this.model.id);
-        var index = this.model.collection.indexOf(this.model);
+        // var index = this.model.collection.indexOf(this.model);
 
         // TODO Find a way to drop in the end
         // if (index !== 0) {
@@ -145,7 +144,9 @@ define(['underscore', 'jquery', 'utils'], function(_, $, utils) {
 
     CardView.prototype.hideMarkers = function(e) {
         // e.target.classList.remove(this.overTopClass);
-        e.target.classList.remove(this.overBottomClass);
+        if (e.target.classList) {
+            e.target.classList.remove(this.overBottomClass);
+        }
     };
 
     CardView.prototype.hideUiClasses = function(e) {

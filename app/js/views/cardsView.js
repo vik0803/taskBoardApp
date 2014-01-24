@@ -4,27 +4,17 @@ define(['jquery', 'underscore', 'views/cardView'],
 
         var CardsView = function(parameters, el, controller) {
             this.el = document.getElementById(el);
-            this.collection = parameters;
             // o_O
+            this.collection = parameters;
             this.controller = controller;
             this.init();
-        }
+        };
 
         CardsView.prototype.init = function() {
+
             var self = this;
             _.each(this.collection, function(model) {
                 model.collection = self.collection;
-            });
-
-            // Sorry, no time at all to create normal events bindings and
-            // TODO Bind Events
-            $(this.el).on('rendered', function() {
-                _.each(self.childViews, function(view) {
-                    view.listen();
-                    $(view).on('insertAfter', function(e, data) {
-                        $(self.controller).trigger('changeOrder', data);
-                    });
-                });
             });
 
             this.render();
@@ -35,7 +25,7 @@ define(['jquery', 'underscore', 'views/cardView'],
         };
 
         CardsView.prototype.renderChildren = function() {
-            var ItemView, self = this;
+            var self = this;
 
             this.childViews = [];
             // TODO templates usage
@@ -55,7 +45,15 @@ define(['jquery', 'underscore', 'views/cardView'],
 
             this.el.innerHTML = list.outerHTML;
 
-            $(this.el).trigger('rendered');
+            _.each(self.childViews, function(view) {
+                // TODO get this bullshit away: fixing bug with vice-versa several times dragging
+                setTimeout(function(){
+                    view.listen();
+                }, 1);
+                $(view).on('insertAfter', function(e, data) {
+                    $(self.controller).trigger('changeOrder', data);
+                });
+            });
         };
 
         return CardsView;

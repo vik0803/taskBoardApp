@@ -20,10 +20,9 @@ define(['views/cardsView'], function(CardsView) {
             }[supposedCards[i].status];
             colConstructor.push(supposedCards[i]);
         }
-
         // TODO proper element selection and controller behaviour
-        this.toDoListView = new CardsView(this.toDo, 'to-do', this);
-        this.inProgressListView = new CardsView(this.inProgress, 'in-progress', this);
+        this.toDoListView = new CardsView(this.toDo, 'toDo', this);
+        this.inProgressListView = new CardsView(this.inProgress, 'inProgress', this);
         this.doneListView = new CardsView(this.done, 'done', this);
 
         $(this).on('changeOrder', function(e, data) {
@@ -50,18 +49,23 @@ define(['views/cardsView'], function(CardsView) {
             }[data.targetStatus];
 
             if (targetCol === sourceCol) {
-                // Array.move(): is in app for now (
-                targetCol.move(data.sourceIndex, data.targetIndex);
-                tList.render();
+                // Array.move() : is in app for now (
+                targetCol.move(data.sourceIndex, data.targetIndex + 1);
+                tList.init();
             } else {
                 var model = _.findWhere(sourceCol, {
                     id: data.sourceId
                 });
-                model.status = data.targetStatus;
-                sourceCol.splice(data.sourceIndex, 1);
-                targetCol.splice(data.targetIndex + 1, 0, model);
-                tList.render();
-                sList.render();
+                if (model) {
+                    model.status = data.targetStatus;
+                    sourceCol.splice(data.sourceIndex, 1);
+                    targetCol.splice(data.targetIndex + 1, 0, model);
+                }
+
+                // model.collection = targetCol;
+
+                tList.init();
+                sList.init();
             }
 
             // We're in a hurry, right? (-_-;)
@@ -76,7 +80,6 @@ define(['views/cardsView'], function(CardsView) {
             localStorage.cards = JSON.stringify(toStore);
         });
     }
-
     return {
         start: start
     };
