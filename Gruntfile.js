@@ -169,7 +169,8 @@ module.exports = function (grunt) {
                         '<%= taskApp.dist %>/styles/{,*/}*.css',
                         '<%= taskApp.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '<%= taskApp.dist %>/styles/fonts/{,*/}*.*',
-                        '<%= taskApp.app %>/*.json'
+                        '<%= taskApp.app %>/*.json',
+                        '<%= taskApp.app %>/*.ico'
                     ]
                 }
             }
