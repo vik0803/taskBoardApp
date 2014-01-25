@@ -1,4 +1,4 @@
-taskApp
+taskBoardApp
 ==========
 
 A javascript app for a task board using bower, grunt, requirejs, jquery and underscore + html5 native drag and drop and localStorage.
