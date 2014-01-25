@@ -8,8 +8,8 @@ Installation:
   <li>Clone the repository somewhere</li>
   <li>cd there in terminal</code></li>
   <li>run <code>npm install</code></li>
-  <li>run <code>'bower install</code></li>
-  <li>run <code>'grunt server</code></li>
+  <li>run <code>bower install</code></li>
+  <li>run <code>grunt server</code></li>
 </ol>
 You should be redirected straigth to a browser window.
 Browse source code in app directory.
