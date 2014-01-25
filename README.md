@@ -20,10 +20,12 @@ Browse source code in app directory.
 
 Thank you!
 
+
+
+
 The task description:
 
 Тестовое задание
-
 
 Необходимо реализовать приложение для управления задачами (GTD).
 
