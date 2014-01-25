@@ -104,7 +104,7 @@ module.exports = function (grunt) {
                 cssDir: '.tmp/styles',
                 generatedImagesDir: '.tmp/images/generated',
                 imagesDir: '<%= taskApp.app %>/images',
-                javascriptsDir: '<%= taskApp.app %>/scripts',
+                javascriptsDir: '<%= taskApp.app %>/js',
                 fontsDir: '<%= taskApp.app %>/styles/fonts',
                 importPath: '<%= taskApp.app %>/bower_components',
                 httpImagesPath: '/images',
@@ -147,7 +147,7 @@ module.exports = function (grunt) {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
                     // `name` and `out` is set by grunt-usemin
-                    baseUrl: '<%= taskApp.app %>/scripts',
+                    baseUrl: '<%= taskApp.app %>/js',
                     optimize: 'none',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
@@ -168,7 +168,8 @@ module.exports = function (grunt) {
                         '<%= taskApp.dist %>/js/{,*/}*.js',
                         '<%= taskApp.dist %>/styles/{,*/}*.css',
                         '<%= taskApp.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-                        '<%= taskApp.dist %>/styles/fonts/{,*/}*.*'
+                        '<%= taskApp.dist %>/styles/fonts/{,*/}*.*',
+                        '<%= taskApp.app %>/*.json'
                     ]
                 }
             }

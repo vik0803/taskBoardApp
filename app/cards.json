@@ -37,20 +37,20 @@
   },
   {
     "id": 7,
-    "name": "Emplement Templates",
+    "name": "Implement Templates",
     "type": "task",
     "status": "toDo"
   },
   {
     "id": 8,
-    "name": "Drop at the end of the list support",
+    "name": "Drop at the top of the list support",
     "type": "task",
     "status": "toDo"
   },
   {
     "id": 9,
-    "name": "Remove deprecated els, events and stuff",
-    "type": "bug",
-    "status": "toDo"
+    "name": "Get a Job",
+    "type": "task",
+    "status": "inProgress"
   }
 ]

@@ -4,22 +4,22 @@ require.config({
         requirejs: '../bower_components/requirejs/require',
         underscore: '../bower_components/underscore/underscore',
         modernizr: '../bower_components/modernizr/modernizr',
-        utils: 'utils'
+        utils: 'utils',
+        'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap'
     },
     shim: {
-        'underscore': {
+        underscore: {
             exports: '_'
         },
-        'modernizr': {
+        modernizr: {
             exports: 'Modernizr'
         }
     }
 });
 
-require(['app', 'jquery'], function (App, $) {
+require(['app'], function (App) {
     'use strict';
 
-    var application = new App();
+    new App();
 
-    console.log('unfortunately running %s version of jQuery', $().jquery);
 });
