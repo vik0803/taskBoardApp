@@ -6,10 +6,10 @@ A javascript app for a task board using bower, grunt, requirejs, jquery and unde
 Installation:
 <ol>
   <li>Clone the repository somewhere</li>
-  <li>cd there in terminal</li>
-  <li>run 'npm install'</li>
-  <li>run 'bower install'</li>
-  <li>run 'grunt server'</li>
+  <li>cd there in terminal</code></li>
+  <li>run <code>npm install</code></li>
+  <li>run <code>'bower install</code></li>
+  <li>run <code>'grunt server</code></li>
 </ol>
 You should be redirected straigth to a browser window.
 Browse source code in app directory.
