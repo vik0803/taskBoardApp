@@ -4,6 +4,7 @@ taskApp
 A javascript app for a task board using bower, grunt, requirejs, jquery and underscore + html5 native drag and drop and localStorage.
 
 Installation:
+
 1. Clone the repository somewhere
 
 2. cd there in terminal
@@ -20,7 +21,10 @@ Browse source code in app directory.
 Thank you!
 
 The task description:
+
 Тестовое задание
+
+
 Необходимо реализовать приложение для управления задачами (GTD).
 
 Требования к системе:
