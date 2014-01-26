@@ -53,7 +53,6 @@ define(['underscore','views/cardsView'], function(_, CardsView) {
             }[data.targetStatus];
 
             if (targetCol === sourceCol) {
-                // Array.move() : is in app for now (
                 this.move(targetCol, data.sourceIndex, data.targetIndex + 1);
                 tList.init();
             } else {
