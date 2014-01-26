@@ -5,7 +5,7 @@ define(['underscore'], function(_){
     };
     _.extend(AddView.prototype, {
         render: function() {
-            // Did not used any template engine, sorry
+            // Did not use any template engine
             this.el = document.getElementById('add-card');
             this.el.innerHTML = '<div class="input-group"><span class="input-group-addon"><input id="card-type" type="checkbox"></span><input id="card-name" type="text" class="form-control" placeholder="If checked - bug"><span class="input-group-btn"><button id="add" class="btn btn-default" type="button">Add</button></span></div>';
         }
